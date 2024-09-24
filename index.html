@@ -24,6 +24,35 @@
         </article>
     </main>
 
-    <script src="app.js"></script>
+    <section class="dialog-container">
+        <dialog id="book-info">
+            <form>
+                <h2>New Book</h2>
+                <p>
+                    <input type="text" id="name" placeholder="Author's Name">
+                </p>
+
+                <p>
+                    <input type="text" id="pages" placeholder="Number of Pages">
+                </p>
+
+                <p>
+                    <input type="text" id="title" placeholder="Title">
+                </p>
+
+                <p class="radios">Read?
+                    <span><input type="radio" id="read" name="radio">Yes</span>
+                    <span><input type="radio" id="default" name="radio">No</span>
+                </p>
+
+                <p>
+                    <button value="cancel" formmethod="dialog">Cancel</button>
+                    <button id="confirmBtn" value="default">Confirm</button>
+                </p>
+            </form>
+        </dialog>
+    </section>
+    <script defer src="app.js">
+    </script>
 </body>
 </html>

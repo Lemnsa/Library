@@ -106,3 +106,57 @@ body > h1 {
     color: var(--card-bg-color);
     background-color: var(--black-text);
 }
+
+/* dialog */
+::backdrop {
+    background-color: #1717178a;
+}
+
+dialog {
+    top: 10%;
+    left: 20%;
+    border: none;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+dialog form {
+    width: 100%;
+    text-align: center;
+}
+
+form p {
+    margin-bottom: 10px;
+}
+
+input {
+    width: 90%;
+    padding: 10px 10px;
+}
+
+ p:nth-child(5) input{
+    width: 10%;
+    cursor: pointer;
+}
+
+p:last-child {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+p:last-child button {
+    margin-top: 20px;
+    padding: 7px 12px;
+    font-size: 1em;
+    font-weight: 600;
+    border: 2px solid var(--black-text);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+p:last-child button:last-child {
+    color: var(--card-bg-color);
+    background-color: var(--black-text);
+}

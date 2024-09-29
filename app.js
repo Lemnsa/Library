@@ -97,6 +97,7 @@ function addBookToLibrary(book) {
     container.appendChild(card);
     myCards.push(card);
     removeBook();
+    changeStatusOnClick();
     }
 
 
@@ -116,10 +117,23 @@ function removeBook() {
         const btnsArray = [...btns];
         // console.log(btnsArray);
         btnsArray[1].addEventListener("click", () => {
-            console.log(btnsArray[1]);
+            // console.log(btnsArray[1]);
             container.removeChild(card);
             let index = myCards.indexOf(card);
             myLibrary.splice(index, 1);
+        })
+    }
+    )
+}
+
+function changeStatusOnClick () {
+    myCards.forEach(card => {
+        let btns = card.querySelectorAll(".card .buttons button");
+        let span = card.querySelector(".card div .status");
+        const btnsArray = [...btns];
+        // console.log(btnsArray);
+        btnsArray[0].addEventListener("click", () => {
+            span.classList.toggle("completed");
         })
     }
     )

@@ -160,3 +160,9 @@ p:last-child button:last-child {
     color: var(--card-bg-color);
     background-color: var(--black-text);
 }
+
+/* read books */
+#read {
+    background-color: var(--black-text);
+    color: var(--card-bg-color);
+}

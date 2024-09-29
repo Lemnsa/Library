@@ -22,7 +22,7 @@ const container = document.querySelector('.container');
 const titleField = document.getElementById("title");
 const authorField = document.getElementById("name");
 const pageCount = document.getElementById("pages");
-const isRead = document.querySelectorAll(".radios span");
+const isRead = document.querySelectorAll(".radios span input");
 
 // on and close dialog
 openDialog.addEventListener("click", () => {
@@ -73,7 +73,7 @@ function addBookToLibrary(book) {
     titleSpan.innerText = "Read";
     titleSpan.setAttribute("class", "status");
     titleH1.innerText = book.title;
-
+    changeStatus(titleSpan);
 
 
     title.appendChild(titleH1);
@@ -95,7 +95,21 @@ function addBookToLibrary(book) {
     card.appendChild(title);
     card.appendChild(btns);
     container.appendChild(card);
-    console.log(card)
+    // console.log(card)
+    
 
     }
 
+
+    function changeStatus(status) {
+        for(const radioBtn of isRead) {
+            if(radioBtn.checked) {
+                if(radioBtn.value === "read") {
+                    status.setAttribute("id", "read");
+                }
+            }
+        }
+    }
+
+
+    

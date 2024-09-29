@@ -52,9 +52,9 @@ function addBookToLibrary(book) {
     card.setAttribute("class", "card");
     const author = document.createElement("div");
     const authorName = document.createElement("h3");
-    // authorName.innerText = book.author;
+    authorName.innerText = book.author;
     authorName.setAttribute("class", "author-name");
-    author.innerText = 'Author: ' +book.author+ ' ';
+    author.innerText = 'Author:';
     author.appendChild(authorName);
 
     const page = document.createElement("div");
@@ -68,7 +68,7 @@ function addBookToLibrary(book) {
     title.setAttribute("class", "title-container");
     const titleH1 = document.createElement("h1");
     titleH1.setAttribute("class", "title");
-    titleH1.setAttribute("style", "font-weight: 700; font-size: 32px;")
+    titleH1.setAttribute("style", "font-weight: 700; font-size: 32px;");
     const titleSpan = document.createElement("span");
     titleSpan.innerText = "Read";
     titleSpan.setAttribute("class", "status");
@@ -95,6 +95,7 @@ function addBookToLibrary(book) {
     card.appendChild(title);
     card.appendChild(btns);
     container.appendChild(card);
+    console.log(card)
 
     }
 

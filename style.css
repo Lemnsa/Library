@@ -166,3 +166,8 @@ p:last-child button:last-child {
     background-color: var(--black-text);
     color: var(--card-bg-color);
 }
+
+.card div .status.completed {
+    background-color: var(--black-text);
+    color: var(--card-bg-color);
+}

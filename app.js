@@ -12,6 +12,7 @@ function Book( title, author, numberPage) {
 
 
 const myLibrary = [];
+const myCards = [];
 
 const openDialog = document.getElementById('btn');
 const dialog = document.getElementById("book-info");
@@ -41,7 +42,6 @@ confirmBtn.addEventListener("click", (event) => {
    const book = new Book(title.value, authorField.value, pageCount.value);
    myLibrary.push(book);
    addBookToLibrary(book);
-
    dialog.close();
 });
 
@@ -95,9 +95,8 @@ function addBookToLibrary(book) {
     card.appendChild(title);
     card.appendChild(btns);
     container.appendChild(card);
-    // console.log(card)
-    
-
+    myCards.push(card);
+    removeBook();
     }
 
 
@@ -111,5 +110,17 @@ function addBookToLibrary(book) {
         }
     }
 
-
-    
+function removeBook() {
+    myCards.forEach(card => {
+        let btns = card.querySelectorAll(".card .buttons button");
+        const btnsArray = [...btns];
+        // console.log(btnsArray);
+        btnsArray[1].addEventListener("click", () => {
+            console.log(btnsArray[1]);
+            container.removeChild(card);
+            let index = myCards.indexOf(card);
+            myLibrary.splice(index, 1);
+        })
+    }
+    )
+}

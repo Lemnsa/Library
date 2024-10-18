@@ -82,28 +82,31 @@ dialog.addEventListener("close", (e) => {
 confirmBtn.addEventListener("click", (event) => { 
     event.preventDefault();
    const book = new Book(title.value, authorField.value, pageCount.value);
+   const pages = book.pages;
+   const author = book.author;
+   const name = book.title;
    myLibrary.push(book);
-   addBookToLibrary(book);
+   addBookToLibrary(author, pages, name);
    dialog.close();
 });
 
 console.log(myLibrary);
 
-function addBookToLibrary(book) {
+function addBookToLibrary(authorN, pagesC, titled) {
     const card = document.createElement("article");
     card.setAttribute("class", "card");
     const author = document.createElement("div");
     const authorName = document.createElement("h3");
-    authorName.innerText = book.author;
+    authorName.innerText = authorN;
     authorName.setAttribute("class", "author-name");
-    author.innerText = 'Author:';
+    author.innerText = 'Author:' +authorN;
     author.appendChild(authorName);
 
     const page = document.createElement("div");
     const pageNumber = document.createElement("p");
     //  pageNumber.innerText = book.numberPage;
     pageNumber.setAttribute("class", "page-number");
-    page.innerText = 'Pages: '+book.numberPage+' ';
+    page.innerText = 'Pages: '+pagesC+' ';
     page.appendChild(pageNumber);
 
     const title = document.createElement("div");
@@ -114,7 +117,7 @@ function addBookToLibrary(book) {
     const titleSpan = document.createElement("span");
     titleSpan.innerText = "Read";
     titleSpan.setAttribute("class", "status");
-    titleH1.innerText = book.title;
+    titleH1.innerText = titled;
     changeStatus(titleSpan);
 
 

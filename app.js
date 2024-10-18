@@ -1,15 +1,51 @@
 // book constructor
 
-function Book( title, author, numberPage) {
-    this.title = title;
-    this.author = author;
-    this.numberPage = numberPage;
+// function Book( title, author, numberPage) {
+//     this.title = title;
+//     this.author = author;
+//     this.numberPage = numberPage;
 
-    this.isRead = function () {
-        return false;
+//     this.isRead = function () {
+//         return false;
+//     }
+// }
+
+class Book {
+    #title = '';
+    #author = '';
+    #numberOfPage = 0;
+
+    constructor(title, author, numberPage) {
+        this.#author = author;
+        this.#numberOfPage = numberPage;
+        this.#title = title;
     }
-}
 
+    get title(){
+        return this.#title;
+    }
+
+    get author(){
+        return this.#author;
+    }
+
+    get pages(){
+        return this.#numberOfPage;
+    }
+
+    set setTitle(newTitle) {
+        this.#title = newTitle;
+    }
+
+    set setAuthor(newAuthor) {
+        this.#author = newAuthor;
+    }
+
+    set setNumberOfPage(newnumberOfPage) {
+        this.#numberOfPage = newnumberOfPage;
+    }
+
+}
 
 const myLibrary = [];
 const myCards = [];

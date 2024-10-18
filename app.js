@@ -45,6 +45,12 @@ class Book {
         this.#numberOfPage = newnumberOfPage;
     }
 
+    // methods
+    Read() {
+        return true;
+    }
+
+
 }
 
 const myLibrary = [];
